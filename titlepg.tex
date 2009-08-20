@@ -1,0 +1,34 @@
+% Title set here and also below (for line breaks etc)
+
+\title{\mytitle}
+\author{\myauthor}
+\date{\mydate}
+
+% Set up title page
+\newcommand*{\titlePW}{\begingroup% PW Thesis
+\def\drop{0.1\textheight}
+\vspace*{\drop} 
+\centering 
+{\Large\bfseries{\mycovertitle}}\par 
+\vspace*{\drop}
+{\Large \mycoverauthor}\par 
+\vfill 
+\begin{center} 
+{\rmfamily\normalsize \myfaculty} \\
+    \vskip1cm
+    {\rmfamily\normalsize \thedate}\\\par 
+\end{center}
+\vfill
+\begin{center}
+        \small\textsc{Submitted in partial fulfilment of the requirements \\
+        for the degree of Doctor of Education}
+\end{center}
+\vskip1cm
+%\begin{center}
+%        \includegraphics{utslogo}
+%\end{center}
+\vfill
+\null 
+\endgroup}
+
+\endinput

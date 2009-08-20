@@ -1,0 +1,25 @@
+% Provides extra PDF data, bookmarking etc
+
+\ifpdf
+  \pdfoutput=1
+  \usepackage[
+    pdftex,
+    plainpages=false,
+    bookmarks=false,
+    pdfpagelabels,
+    bookmarksnumbered,
+    pdftitle={\mytitle},
+    %pagebackref,
+    pdfauthor={\myauthor},
+    pdfkeywords={\mykeywords},
+    colorlinks=false,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+    ]{hyperref}
+  \usepackage{memhfixc}
+\fi
+
+
+\endinput

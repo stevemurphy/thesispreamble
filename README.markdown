@@ -8,7 +8,7 @@ Created by Stephen Murphy on 2009-08-20
 
 LaTeX preamble for use with thesis temple, intended for dissertation and other academic/research writing.
 
-This file will be included in the LaTeX file created from the template, and sets most of the options required. he LaTeX document itself would typically be under version control, and the preamble.tex file would be used as a submodule of the Git repository.
+This file will need to be included in the LaTeX file created from the template, and sets most of the options required. The LaTeX document itself would typically be under version control, and the preamble.tex file would be used as a submodule of the Git repository.
 
 Note that style files, BibTeX files etc would be in the texmf tree.
 
