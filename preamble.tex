@@ -1,0 +1,39 @@
+% preamble to be input into LaTeX file for UTS theses and assignments
+% by Stephen Murphy
+
+\def\MyFileVersion{Version 1.5, 2006/12/15} % this and some below are here to test
+%\setlrmarginsandblock{2.5cm}{*}{1} 
+%\setulmarginsandblock{2.5cm}{2.5cm}{*}
+%\setmarginnotes{2.5mm}{2cm}{1em}
+%\checkandfixthelayout
+
+%\usepackage{chapterbib} % has to be loaded before babel, loaded in smuts
+\usepackage{smuts}
+%\usepackage{hyperref} % inlcude hyperlinks, eg within doc and to www
+
+\bibliographystyle{smuts}	% (uses file "smuts.bst")
+
+%\usepackage{pdfsync} % this is in smuts, but TextMate needs it in the open file
+\synctex=0
+%\usepackage{syntonly} 
+%\syntaxonly % use to check syntax - quicker for large files
+
+\graphicspath{{./graphics/}} % Change to suit if not in same dir
+
+% Input title page
+\input{includes/titlepg}
+
+% Set up better PDF
+\input{includes/setupPDF}
+
+\setcounter{tocdepth}{1}
+
+%\linespread{1.66}\normalsize   % double space
+%\linespread{1}\normalsize      % single space
+
+\overfullrule=5pt
+\hyphenation{eth-nog-ra-phy auto-eth-nog-ra-phy con-tem-po-ra-ne-ous}
+
+% If just doing a single chapter, uncomment below
+%\chapterstyle{section}
+%\renewcommand{\chaptitlefont}{\normalfont\Large\bfseries}
