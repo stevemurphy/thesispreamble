@@ -1,0 +1,49 @@
+% frontmatter to be input into LaTeX file for UTS theses and assignments
+% this version is for simpler docs, e.g. a draft/chapter only with no/minimal frontmatter
+% by Stephen Murphy
+
+\frontmatter
+
+%\begin{titlingpage}
+%\titlePW
+%\end{titlingpage}
+
+\pagestyle{plain}
+
+%\beforepreface		% Cover page - leave out if just a short writing piece
+%\declaration       % \edeclaration or \declaration - declaration page
+%\prefacesection{Acknowledgements}
+%\input{acknowledgements}
+%\prefacesection{Abstract}
+\thispagestyle{empty}
+\abstractintoc
+\linespread{1.4}\small\normalsize % change linespacing for abstract etc
+\setlength\absparindent{0em}
+\setlength\absparsep{2ex}
+
+%\renewcommand\abstractname{Declaration}% of Authorship and Originality}
+%\begin{abstract}
+%\input{declaration} % path is relative to "calling" file, not this file
+%\end{abstract}
+%\clearpage
+
+%\renewcommand\abstractname{Acknowledgements}
+%\begin{abstract}
+%\input{acknowledgements} % path is relative to "calling" file, not this file
+%\end{abstract}
+%\clearpage 
+
+%\tableofcontents 
+%\clearpage 
+%\listoffigures
+%\clearpage 
+%\listoftables
+%\clearpage
+
+%\renewcommand\abstractname{Abstract}
+%\begin{abstract}
+%\input{abstract} % path is relative to "calling" file, not this file
+%\end{abstract}
+%\clearpage
+
+%\afterpreface
