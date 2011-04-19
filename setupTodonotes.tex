@@ -1,0 +1,17 @@
+% Setup todonotes package with custom commands for marking todos etc.
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\usepackage[shadow,obeyDraft,colorinlistoftodos,textsize=scriptsize]{todonotes} % provide formatted todos
+
+% simple fixup (rework marker), fixme, changes macros that cope with basic usage/Ulysses exporter
+\newcommand*{\fixup}[1]{\todo[color=Red!40]{#1}{\textcolor{Red}{~FIXME:}}} % macro for fixup (rework) 
+\newcommand*{\fixme}[1]{\todo[color=Red!40]{#1}{\textcolor{Red}{~FIXME: #1}}} % macro for fixme entries - will prevent final compile
+\newcommand*{\changes}[1]{\todo[color=OliveGreen!40, prepend, caption={CHANGED}]{#1}{\textcolor{OliveGreen}{#1}}} % macro for changed entries
+%\newcommand*{\changes}[1]{\todo[color=OliveGreen!40, noinline, caption={CHANGED}]{#1}{\textcolor{OliveGreen}{#1}}} % macro for changed entries % alt macro for changed entries
+
+% Fixme setup defines formatted call out note -- inline note used here
+\newcommand*{\callnote}[1]{\todo[inline, color=Green!40]{#1}}
+
+
+\endinput

@@ -1,0 +1,15 @@
+% Setup todo package with custom commands for marking todos etc.
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\usepackage{todo} % use [marginpar] option for todos in margin
+
+% simple todo, fixup (rework marker), fixme, changes macros that cope with basic usage/Ulysses exporter)
+\newcommand*{\fixup}[1]{\todo[Fixup]{#1}}% macro for fixup (rework) 
+\newcommand*{\fixme}[1]{\todo[Fixme]{#1}}% macro for fixme entries - will prevent final compile
+\newcommand*{\changes}[1]{\renewcommand*{\todoopen}{\astodos{Changed: $\rightarrow$}}\renewcommand*{\todoclose}{\astodos{$\leftarrow$}}\begin{todoenv}{#1}\end{todoenv}}% macro for changed entries
+%\newcommand*{\changes}[1]{\todo[Changed]{#1}{#1}}% alt macro for changed entries
+
+% Fixme setup defines formatted call out note -- simple note used here
+\newcommand*{\callnote}[1]{\todo[Note]{#1}}
+
+\endinput

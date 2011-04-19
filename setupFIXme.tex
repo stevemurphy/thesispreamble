@@ -1,0 +1,40 @@
+% Setup FIXme package with custom commands for marking todos etc.
+
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+% Status final -- textcolor part of macros still highlights text, but no margin note or index list
+\usepackage[status=draft,multiuser]{fixme} % or use fixme notes
+\fxsetup{layout=pdfcmargin} % choose how fixme notes will be inserted
+\fxusetheme{color} % colour fixme notes
+\fxusetargetlayout{color} % colour the targeted text in fixme notes
+
+% use in-built colours for custom layout
+\definecolor{fxnote}{rgb}{0.0000,0.6000,0.0000}
+\definecolor{fxwarning}{rgb}{1.0000,0.5490,0.0000}
+\definecolor{fxerror}{rgb}{1.0000,0.2706,0.0000}
+\definecolor{fxfatal}{rgb}{1.0000,0.0000,0.0000}
+
+% define macro for custom layout (based on old FXUser format)
+\newcommand*\FXBoxed[3]{\begin{center}\framebox
+[6in][c]{\begin{minipage}{5in}\color{fx#1}\textit{\textbf{#3:}
+#2}\end{minipage}}\end{center}}
+
+% register custom layout
+\FXRegisterLayout*[marginclue,marginnote,margin]{boxednote}{\FXBoxed}
+
+\FXRegisterAuthor{todo}{todoo}{TODO}
+\FXRegisterAuthor{nb}{nbb}{NOTE}
+\FXRegisterAuthor{fixup}{fixupp}{FIXME}
+\FXRegisterAuthor{changes}{changess}{CHANGED}
+
+\newcommand*{\callnote}[1]{\nbnote[layout=boxednote]{#1}} % callout note
+
+% simple todo, fixup (rework marker), fixme, changes macros that cope with basic usage/Ulysses exporter)
+\newcommand*{\todo}[1]{\todowarning[layout=marginclue]{#1}{\textcolor{BurntOrange}{~TODO: #1}}} % macro for todo entries (don't use with todonotes)
+\newcommand*{\fixup}[1]{\fixuperror[layout=marginclue]{#1}{\textcolor{Red}{~FIXME:}}} % macro for fixup (rework) 
+\renewcommand*{\fixme}[1]{\fixupfatal[layout=marginclue]{#1}{\textcolor{Red}{~FIXME: #1}}} % macro for fixme entries - will prevent final compile
+%\newcommand*{\changes}[1]{\changesnote{#1}{\textcolor{OliveGreen}{CHANGED: #1}}} % macro for changed entries
+\newcommand*{\changes}[1]{\changesnote*[layout=marginclue]{#1}{#1}} % alt macro for changed entries
+
+
+\endinput
